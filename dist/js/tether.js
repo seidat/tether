@@ -669,7 +669,8 @@ var TetherClass = (function (_Evented) {
         offset: '0 0',
         targetOffset: '0 0',
         targetAttachment: 'auto auto',
-        classPrefix: 'tether'
+        classPrefix: 'tether',
+        keepDomStructure: false
       };
 
       this.options = extend(defaults, options);
@@ -1217,7 +1218,8 @@ var TetherClass = (function (_Evented) {
         }
       };
 
-      var moved = false;
+      var moved = this.options.keepDomStructure === true;
+      // let moved = false;
       if ((same.page.top || same.page.bottom) && (same.page.left || same.page.right)) {
         css.position = 'absolute';
         transcribe(same.page, pos.page);

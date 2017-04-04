@@ -731,7 +731,6 @@ class TetherClass extends Evented {
       }
     };
     
-    console.log('setting moved to something. Also, this', this);
     let moved = (this.options.keepDomStructure === true);
     // let moved = false;
     if ((same.page.top || same.page.bottom) && (same.page.left || same.page.right)) {
